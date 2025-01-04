@@ -52,18 +52,6 @@ This repository contains Python programming exercises, assignments, and mini-pro
 
 ---
 
-## Animation
-
-<div style="text-align: center;">
-  <div style="width: 100px; height: 100px; background-color: #4CAF50; margin: auto; animation: spin 4s linear infinite;"></div>
-</div>
-
-<style>
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-</style>
 
 ## License
 
@@ -75,3 +63,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   - GitHub: [UmeshPatelGitHub](https://github.com/UmeshPatelGitHub)
   - LinkedIn: [UmeshPatelLinkedIn](https://linkedin.com/in/UmeshPatelLinkedIn)
   - Email: [umesh.code1@gmail.com](mailto:umesh.code1@gmail.com)
+
+## Thank You
+
+Thank you for visiting this repository! 
+
+![Thank You](https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif)
