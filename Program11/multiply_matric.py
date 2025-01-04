@@ -21,4 +21,3 @@ Y = [[1,2,3],
 result = multiply_matrix(X, Y)
 for r in result:
   print(r)
-  
