@@ -33,6 +33,11 @@
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
+        .highlight {
+            background-color: #ffeb3b;
+            padding: 0.2em 0.4em;
+            border-radius: 4px;
+        }
         .animation {
             width: 100px;
             height: 100px;
@@ -106,6 +111,21 @@
                 transform: translateY(-15px);
             }
         }
+        .typing-effect {
+            display: inline-block;
+            overflow: hidden;
+            white-space: nowrap;
+            border-right: 3px solid;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+        }
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes blink-caret {
+            from, to { border-color: transparent; }
+            50% { border-color: black; }
+        }
     </style>
 </head>
 <body>
@@ -119,10 +139,10 @@
         </div>
         <div class="card">
             <h2>Department</h2>
-            <p><strong>Department of CSE-AIML</strong></p>
-            <p><strong>UMESH PATEL</strong></p>
-            <p><strong>0126AL231140</strong></p>
-            <p><strong>AIML 3rd B</strong></p>
+            <p><strong>Department of <span class="highlight">CSE-AIML</span></strong></p>
+            <p><strong><span class="highlight">UMESH PATEL</span></strong></p>
+            <p><strong><span class="highlight">0126AL231140</span></strong></p>
+            <p><strong><span class="highlight">AIML 3rd B</span></strong></p>
         </div>
         <div class="card">
             <h2>Repository Programs</h2>
@@ -146,7 +166,7 @@
         </div>
         <div class="thank-you">
             <h2>Thank You</h2>
-            <p>Thank you for visiting this repository!</p>
+            <p class="typing-effect">Thank you for visiting this repository!</p>
             <div class="thank-you-animation">🎉 Thank You! 🎉</div>
         </div>
     </div>
