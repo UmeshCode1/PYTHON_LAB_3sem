@@ -41,6 +41,30 @@ This repository contains Python programming exercises, assignments, and mini-pro
 - **Program11/**: Program to multiply matrices.
   - [multiply_matric.py](Program11/multiply_matric.py)
 
+## Department
+- **Department of CSE-AIML**
+- **UMESH PATEL**
+- **0126AL231140**
+- **AIML 3rd B**
+
+## GitHub Pages
+[https://umeshcode1.github.io/PYTHON_LAB_3sem/](https://umeshcode1.github.io/PYTHON_LAB_3sem/)
+
+---
+
+## Animation
+
+<div style="text-align: center;">
+  <div style="width: 100px; height: 100px; background-color: #4CAF50; margin: auto; animation: spin 4s linear infinite;"></div>
+</div>
+
+<style>
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
