@@ -126,6 +126,50 @@
             from, to { border-color: transparent; }
             50% { border-color: black; }
         }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 8px;
+            animation: slideIn 0.5s;
+        }
+        @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        pre {
+            text-align: left;
+            background-color: #f4f4f4;
+            padding: 1em;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
     </style>
 </head>
 <body>
@@ -170,5 +214,39 @@
             <div class="thank-you-animation">🎉 Thank You! 🎉</div>
         </div>
     </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Program Code</h2>
+            <pre id="programCode"></pre>
+            <h2>Output Image</h2>
+            <img id="outputImage" src="" alt="Output Image" style="max-width: 100%;">
+        </div>
+    </div>
+
+    <script>
+        function showModal(programPath, outputImagePath) {
+            document.getElementById('programCode').textContent = 'Loading...';
+            fetch(programPath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('programCode').textContent = data;
+                });
+            document.getElementById('outputImage').src = outputImagePath;
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
