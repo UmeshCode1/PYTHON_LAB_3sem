@@ -53,6 +53,56 @@
             0% { opacity: 0; }
             100% { opacity: 1; }
         }
+        .program-preview {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .program {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 1em;
+            padding: 1em;
+            width: 200px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .program:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -73,23 +123,23 @@
         </div>
         <div class="card">
             <h2>Repository Programs</h2>
-            <ul>
-                <li><a href="Program1/method1.py">Program 1 - GCD Method 1</a></li>
-                <li><a href="Program1/method2.py">Program 1 - GCD Method 2</a></li>
-                <li><a href="Program1/method3.py">Program 1 - GCD Method 3</a></li>
-                <li><a href="Program2/Newton_method.py">Program 2 - Newton's Method</a></li>
-                <li><a href="Program3/method1.py">Program 3 - Exponentiation Method 1</a></li>
-                <li><a href="Program3/method2.py">Program 3 - Exponentiation Method 2</a></li>
-                <li><a href="Program3/method3.py">Program 3 - Exponentiation Method 3</a></li>
-                <li><a href="Program4/program4.py">Program 4 - Maximum from List</a></li>
-                <li><a href="Program5/liner_search.py">Program 5 - Linear Search</a></li>
-                <li><a href="Program6/code.py">Program 6 - Binary Search</a></li>
-                <li><a href="Program7/selection_sort.py">Program 7 - Selection Sort</a></li>
-                <li><a href="Program8/insertion_sort.py">Program 8 - Insertion Sort</a></li>
-                <li><a href="Program9/Merge_sort.py">Program 9 - Merge Sort</a></li>
-                <li><a href="Program10/first_n_prime.py">Program 10 - First N Prime Numbers</a></li>
-                <li><a href="Program11/multiply_matric.py">Program 11 - Matrix Multiplication</a></li>
-            </ul>
+            <div class="program-preview">
+                <div class="program" onclick="showModal('Program1/method1.py', 'output1.png')">Program 1 - GCD Method 1</div>
+                <div class="program" onclick="showModal('Program1/method2.py', 'output2.png')">Program 1 - GCD Method 2</div>
+                <div class="program" onclick="showModal('Program1/method3.py', 'output3.png')">Program 1 - GCD Method 3</div>
+                <div class="program" onclick="showModal('Program2/Newton_method.py', 'output4.png')">Program 2 - Newton's Method</div>
+                <div class="program" onclick="showModal('Program3/method1.py', 'output5.png')">Program 3 - Exponentiation Method 1</div>
+                <div class="program" onclick="showModal('Program3/method2.py', 'output6.png')">Program 3 - Exponentiation Method 2</div>
+                <div class="program" onclick="showModal('Program3/method3.py', 'output7.png')">Program 3 - Exponentiation Method 3</div>
+                <div class="program" onclick="showModal('Program4/program4.py', 'output8.png')">Program 4 - Maximum from List</div>
+                <div class="program" onclick="showModal('Program5/liner_search.py', 'output9.png')">Program 5 - Linear Search</div>
+                <div class="program" onclick="showModal('Program6/code.py', 'output10.png')">Program 6 - Binary Search</div>
+                <div class="program" onclick="showModal('Program7/selection_sort.py', 'output11.png')">Program 7 - Selection Sort</div>
+                <div class="program" onclick="showModal('Program8/insertion_sort.py', 'output12.png')">Program 8 - Insertion Sort</div>
+                <div class="program" onclick="showModal('Program9/Merge_sort.py', 'output13.png')">Program 9 - Merge Sort</div>
+                <div class="program" onclick="showModal('Program10/first_n_prime.py', 'output14.png')">Program 10 - First N Prime Numbers</div>
+                <div class="program" onclick="showModal('Program11/multiply_matric.py', 'output15.png')">Program 11 - Matrix Multiplication</div>
+            </div>
         </div>
         <div class="output">
             <h2>Output View</h2>
@@ -97,5 +147,39 @@
             <div class="animation"></div>
         </div>
     </div>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Program Code</h2>
+            <pre id="programCode"></pre>
+            <h2>Output Image</h2>
+            <img id="outputImage" src="" alt="Output Image" style="max-width: 100%;">
+        </div>
+    </div>
+
+    <script>
+        function showModal(programPath, outputImagePath) {
+            document.getElementById('programCode').textContent = 'Loading...';
+            fetch(programPath)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('programCode').textContent = data;
+                });
+            document.getElementById('outputImage').src = outputImagePath;
+            document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                closeModal();
+            }
+        }
+    </script>
 </body>
 </html>
