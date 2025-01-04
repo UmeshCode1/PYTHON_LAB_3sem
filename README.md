@@ -52,7 +52,10 @@ This repository contains Python programming exercises, assignments, and mini-pro
 
 ---
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1bff1d44e9a910098cd25b52f9381b3f47571f0e
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -63,9 +66,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
   - GitHub: [UmeshPatelGitHub](https://github.com/UmeshPatelGitHub)
   - LinkedIn: [UmeshPatelLinkedIn](https://linkedin.com/in/UmeshPatelLinkedIn)
   - Email: [umesh.code1@gmail.com](mailto:umesh.code1@gmail.com)
+<<<<<<< HEAD
 
 ## Thank You
 
 Thank you for visiting this repository! 
 
 ![Thank You](https://media.giphy.com/media/3o7aD2saalBwwftBIY/giphy.gif)
+=======
+>>>>>>> 1bff1d44e9a910098cd25b52f9381b3f47571f0e
