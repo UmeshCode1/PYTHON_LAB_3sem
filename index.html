@@ -4,22 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Python Lab - 3rd Semester</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         /* General Styles */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+            background-color: #f4f4f4;
             color: #333;
         }
 
         header {
-            background-color: #6a1b9a;
-            color: white;
             text-align: center;
-            padding: 20px 0;
-            animation: fadeIn 2s;
+            padding: 50px 0;
+            background: linear-gradient(135deg, #42a5f5, #478ed1);
+            color: white;
+            transform: perspective(500px) rotateX(10deg);
+            animation: fadeIn 2s ease-in-out;
         }
 
         h1 {
@@ -34,7 +36,8 @@
             background: white;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            animation: slideIn 1.5s;
+            animation: slideIn 2s ease-in-out;
+            transform: perspective(500px) rotateY(10deg);
         }
 
         .details h2, .about h2, .contents h2 {
@@ -43,7 +46,6 @@
         }
 
         .highlight {
-            color: #d32f2f;
             font-weight: bold;
         }
 
@@ -52,11 +54,15 @@
         }
 
         footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #6a1b9a;
+            background-color: #333;
             color: white;
-            margin-top: 20px;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            transform: perspective(500px) rotateX(-10deg);
+            animation: slideIn 2s ease-in-out;
         }
 
         a {
@@ -88,9 +94,64 @@
                 opacity: 1;
             }
         }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Apply animations */
+        .about, .contents {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .details {
+            animation: slideIn 2s ease-in-out;
+        }
+
+        /* 3D Button */
+        .btn-3d {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            background-color: #42a5f5;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            box-shadow: 0 4px #2c7cbf;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-3d:active {
+            transform: translateY(4px);
+            box-shadow: 0 0 #2c7cbf;
+        }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#home"><i class="fas fa-home"></i> Home</a>
+        <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+
     <header>
         <h1>Python Lab - 3rd Semester</h1>
     </header>
@@ -100,6 +161,10 @@
         <p><span class="highlight">Name:</span> Umesh Patel</p>
         <p><span class="highlight">Department:</span> Computer Science & Engineering</p>
         <p><span class="highlight">College:</span> Oriental College of Technology, Bhopal</p>
+        <p><span class="highlight">GitHub:</span> <a href="https://github.com/UmeshPatelGitHub" target="_blank"><i class="fab fa-github"></i> Umesh Patel GitHub</a></p>
+        <p><span class="highlight">LinkedIn:</span> <a href="https://linkedin.com/in/UmeshPatelLinkedIn" target="_blank"><i class="fab fa-linkedin"></i> Umesh Patel LinkedIn</a></p>
+        <p><span class="highlight">Email:</span> <a href="mailto:umesh.code1@gmail.com"><i class="fas fa-envelope"></i> umesh.code1@gmail.com</a></p>
+        <a href="https://github.com/UmeshCode1" class="btn-3d"><i class="fab fa-github"></i> Visit GitHub</a>
     </section>
 
     <section class="about">
@@ -117,7 +182,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Umesh Patel | <a href="https://github.com/umeshpatel">GitHub Profile</a></p>
+        <p>&copy; 2025 Python Lab. All rights reserved.</p>
     </footer>
 </body>
 </html>
