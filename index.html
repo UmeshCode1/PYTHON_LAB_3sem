@@ -42,6 +42,17 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .output {
+            background-color: #e0e0e0;
+            border-radius: 8px;
+            padding: 1em;
+            margin-top: 2em;
+            animation: fadeIn 2s;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
     </style>
 </head>
 <body>
@@ -60,7 +71,31 @@
             <p><strong>0126AL231140</strong></p>
             <p><strong>AIML 3rd B</strong></p>
         </div>
-        <div class="animation"></div>
+        <div class="card">
+            <h2>Repository Programs</h2>
+            <ul>
+                <li><a href="Program1/method1.py">Program 1 - GCD Method 1</a></li>
+                <li><a href="Program1/method2.py">Program 1 - GCD Method 2</a></li>
+                <li><a href="Program1/method3.py">Program 1 - GCD Method 3</a></li>
+                <li><a href="Program2/Newton_method.py">Program 2 - Newton's Method</a></li>
+                <li><a href="Program3/method1.py">Program 3 - Exponentiation Method 1</a></li>
+                <li><a href="Program3/method2.py">Program 3 - Exponentiation Method 2</a></li>
+                <li><a href="Program3/method3.py">Program 3 - Exponentiation Method 3</a></li>
+                <li><a href="Program4/program4.py">Program 4 - Maximum from List</a></li>
+                <li><a href="Program5/liner_search.py">Program 5 - Linear Search</a></li>
+                <li><a href="Program6/code.py">Program 6 - Binary Search</a></li>
+                <li><a href="Program7/selection_sort.py">Program 7 - Selection Sort</a></li>
+                <li><a href="Program8/insertion_sort.py">Program 8 - Insertion Sort</a></li>
+                <li><a href="Program9/Merge_sort.py">Program 9 - Merge Sort</a></li>
+                <li><a href="Program10/first_n_prime.py">Program 10 - First N Prime Numbers</a></li>
+                <li><a href="Program11/multiply_matric.py">Program 11 - Matrix Multiplication</a></li>
+            </ul>
+        </div>
+        <div class="output">
+            <h2>Output View</h2>
+            <p>Here you can see the output of the programs with animations.</p>
+            <div class="animation"></div>
+        </div>
     </div>
 </body>
 </html>
